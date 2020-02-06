@@ -45,7 +45,32 @@ In the created POC application there are a few classes that were copied over fro
 
 4. If the file content validation needs the manifest file, are all of the current fields used for validation purposes or could we remove some of them?
 
-## Suggested plan for improvement
-1. After the above Issues/Questions has been discussed the webin-cli-validator could be refactored: move the validation related part out from webin-cli library into the webin-cli-validator library and remove all the XML Writer related classes from the validator context, too.
+## Suggested plans for improvement
+
+#### Suggestion for a workaround (quick fix): 
+
+1. Copy all the classes needed by the validator - to do file content validation - from webin-cli into webin-cli-validator library. Copy them exactly into the same java package as they were in webin-cli. This way webin-cli could overwrite them, if it is needed. Remove all the XML Writer related classes from the validator context in the validator library.
+
+*Timeframe*: 1 sprint (2 weeks) to TEST env, after 1 sprint test to PROD
+*Resources*: 1 dev from DSP (Karoly) coordinating the changes with ENA team
 
 2. With the newly refactored webin-cli-validator a new online file-content-validator service could be created. This service could be a public service that could be used by all the above parties listed in the Goal section.
+
+*TimeFrame*: 2 sprint (4 weeks) to TEST env, after 1 sprint test to PROD
+*Resources*: 1 dev from DSP (Karoly)
+
+3. ENA could continue to maintain its libraries (webin-cli, webin-cli-validator) after this refactor.
+
+#### Suggestion for permanent refactoring:
+
+1. After the above Issues/Questions has been discussed the webin-cli-validator could be refactored: move the validation related part out from webin-cli library into the webin-cli-validator library and remove all the XML Writer related classes from the validator context, too.
+
+*Timeframe*: 2 sprint (4 weeks) to TEST env, after 1 sprint test to PROD
+*Resources*: 1 dev from DSP (Karoly) & 1 dev from ENA
+
+2. With the newly refactored webin-cli-validator a new online file-content-validator service could be created. This service could be a public service that could be used by all the above parties listed in the Goal section.
+
+*TimeFrame*: 2 sprint (4 weeks) to TEST env, after 1 sprint test to PROD
+*Resources*: 1 dev from DSP (Karoly)
+
+3. ENA could continue to maintain its libraries (webin-cli, webin-cli-validator) after this refactor.
