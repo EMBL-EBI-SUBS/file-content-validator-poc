@@ -31,9 +31,7 @@ The research goal was that with the above listed ENA libraries + some 3rd party 
 The application could be created successfully to pass all the test cases without using the webin-cli library, although along the way there were some issues to solve. These are listed in the next session of this document.
 
 
-**NOTE**
-
-In the created POC application there are a few classes that were copied over from the webin-cli library. In these classes there are parts of the code that deliberately has been removed (commented out), because I suspected that they don’t belong to the file content validation. These decisions might not be correct, because the lack of my knowledge related to these validation tasks. This probably needs a discussion with a relevant person from the ENA team.
+**NOTE** In the created POC application there are a few classes that were copied over from the webin-cli library. In these classes there are parts of the code that deliberately has been removed (commented out), because I suspected that they don’t belong to the file content validation. These decisions might not be correct, because the lack of my knowledge related to these validation tasks. This probably needs a discussion with a relevant person from the ENA team.
 
 ## Issues / Questions
 
@@ -51,13 +49,15 @@ In the created POC application there are a few classes that were copied over fro
 
 1. Copy all the classes needed by the validator - to do file content validation - from webin-cli into webin-cli-validator library. Copy them exactly into the same java package as they were in webin-cli. This way webin-cli could overwrite them, if it is needed. Remove all the XML Writer related classes from the validator context in the validator library.
 
-*Timeframe*: 1 sprint (2 weeks) to TEST env, after 1 sprint test to PROD
-*Resources*: 1 dev from DSP (Karoly) coordinating the changes with ENA team
+**Timeframe**: 1 sprint (2 weeks) to TEST env, after 1 sprint test to PROD
+
+**Resources**: 1 dev from DSP (Karoly) coordinating the changes with ENA team
 
 2. With the newly refactored webin-cli-validator a new online file-content-validator service could be created. This service could be a public service that could be used by all the above parties listed in the Goal section.
 
-*TimeFrame*: 2 sprint (4 weeks) to TEST env, after 1 sprint test to PROD
-*Resources*: 1 dev from DSP (Karoly)
+**TimeFrame**: 2 sprint (4 weeks) to TEST env, after 1 sprint test to PROD
+
+**Resources**: 1 dev from DSP (Karoly)
 
 3. ENA could continue to maintain its libraries (webin-cli, webin-cli-validator) after this refactor.
 
@@ -65,12 +65,14 @@ In the created POC application there are a few classes that were copied over fro
 
 1. After the above Issues/Questions has been discussed the webin-cli-validator could be refactored: move the validation related part out from webin-cli library into the webin-cli-validator library and remove all the XML Writer related classes from the validator context, too.
 
-*Timeframe*: 2 sprint (4 weeks) to TEST env, after 1 sprint test to PROD
-*Resources*: 1 dev from DSP (Karoly) & 1 dev from ENA
+**Timeframe**: 2 sprint (4 weeks) to TEST env, after 1 sprint test to PROD
+
+**Resources**: 1 dev from DSP (Karoly) & 1 dev from ENA
 
 2. With the newly refactored webin-cli-validator a new online file-content-validator service could be created. This service could be a public service that could be used by all the above parties listed in the Goal section.
 
-*TimeFrame*: 2 sprint (4 weeks) to TEST env, after 1 sprint test to PROD
-*Resources*: 1 dev from DSP (Karoly)
+**TimeFrame**: 2 sprint (4 weeks) to TEST env, after 1 sprint test to PROD
+
+**Resources**: 1 dev from DSP (Karoly)
 
 3. ENA could continue to maintain its libraries (webin-cli, webin-cli-validator) after this refactor.
